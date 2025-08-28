@@ -76,3 +76,6 @@ max' a b
     | a > b     = a
     | otherwise = b
 
+-- other way of writing guards (written inline)
+-- max :: (Ord a) => a -> a -> a -> a
+-- max' a b | a > b = a | otherwise = b
