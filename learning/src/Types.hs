@@ -152,3 +152,8 @@ reverseLis (x:xs) = reverseLis xs ++ [x]
 
 repeatInf :: a -> [a]
 repeatInf x = x : repeatInf x
+
+zipLis :: [a] -> [b] -> [(a, b)]
+zipLis _ [] = []
+zipLis [] _ = []
+zipLis (x:xs) (y:ys) = (x, y) : zipLis xs ys
