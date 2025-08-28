@@ -110,3 +110,7 @@ cylinder r h =
         topArea = pi * r ^ 2
     in sideArea + 2 * topArea
 
+describeList :: [a] -> String
+describeList xs = "The list is " ++ case xs of [] -> "empty."
+                                               [x] -> "a singleton list."
+                                               xs -> "a longer list."
