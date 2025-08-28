@@ -15,3 +15,7 @@ sayMe 3 = "Three!"
 sayMe 4 = "Four!"
 sayMe 5 = "Five!"
 sayMe x = "Not between 1 and 5"
+
+factorial2 :: (Integral a) => a -> a
+factorial2 0 = 1
+factorial2 n = n * factorial2 (n - 1)
