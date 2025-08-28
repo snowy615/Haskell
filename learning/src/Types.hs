@@ -135,7 +135,13 @@ max4 [] = error "empty list"
 max4 [x] = x
 max4 (x:xs) = max' x (max4 xs)
 
-replicate :: (Num i, Ord i) => i -> a -> [a]
-replicate n x
+replicate2 :: (Num i, Ord i) => i -> a -> [a]
+replicate2 n x
     | n <= 0    = []
-    | otherwise = x : replicate (n - 1) x
+    | otherwise = x : replicate2 (n - 1) x
+
+-- take2 :: (Num i, Ord i) => i -> [a] -> [a]
+-- take2 n _
+--     | n <= 0  = []
+-- take2 _ []     = []
+-- take2 n (x:xs) = x : take2 (n - 1) xs
