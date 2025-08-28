@@ -145,3 +145,7 @@ taken n _
     | n <= 0  = []
 taken _ []     = []
 taken n (x:xs) = x : taken (n - 1) xs
+
+reverseLis :: [a] -> [a]
+reverseLis [] = []
+reverseLis (x:xs) = reverseLis xs ++ [x]
