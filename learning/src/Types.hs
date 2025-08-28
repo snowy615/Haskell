@@ -79,7 +79,7 @@ max' a b
     | otherwise = b
 
 -- other way of writing guards (written inline)
-max2 :: (Ord a) => a -> a -> a -> a
+max2 :: (Ord a) => a -> a -> a
 max2 a b | a > b = a | otherwise = b
 
 myCompare :: (Ord a) => a -> a -> Ordering
@@ -120,3 +120,12 @@ describeList2 xs = "The list is " ++ what xs
     where what [] = "empty."
           what [x] = "a singleton list."
           what xs = "a longer list."
+
+
+-- max3 :: (Ord a) => [a] -> a
+-- max3 [] = error "empty list"
+-- max3 [x] = x
+-- max3 (x:xs) 
+--     | x > maxTail = x
+--     | otherwise = maxTail
+--     where maxTail = max3 xs
