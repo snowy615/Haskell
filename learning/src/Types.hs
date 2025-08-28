@@ -25,12 +25,12 @@ charName 'a' = "Albert"
 charName 'b' = "Broseph"
 charName 'c' = "Cecil"
 
--- addVectors :: (Num a) => (a, a) -> (a, a) -> (a, a)
--- addVectors a b = (fst a + fst b, snd a + snd b)
+addVectors :: (Num a) => (a, a) -> (a, a) -> (a, a)
+addVectors a b = (fst a + fst b, snd a + snd b)
 
 --better way
-addVectors :: (Num a) => (a, a) -> (a, a) -> (a, a)
-addVectors (x1, y1) (x2, y2) = (x1 + x2, y1 + y2)
+addVectors2 :: (Num a) => (a, a) -> (a, a) -> (a, a)
+addVectors2 (x1, y1) (x2, y2) = (x1 + x2, y1 + y2)
 
 --if first, second = fst, snd
 --third need to redefine
@@ -79,8 +79,8 @@ max' a b
     | otherwise = b
 
 -- other way of writing guards (written inline)
--- max :: (Ord a) => a -> a -> a -> a
--- max' a b | a > b = a | otherwise = b
+max2 :: (Ord a) => a -> a -> a -> a
+max2 a b | a > b = a | otherwise = b
 
 myCompare :: (Ord a) => a -> a -> Ordering
 a `myCompare` b
@@ -94,12 +94,12 @@ initials firstname lastname = [f] ++ ". " ++ [l] ++ "."
     where (f:_) = firstname
           (l:_) = lastname
 
--- calcBmis :: (RealFloat a) => [(a, a)] -> [a]
--- calcBmis xs = [bmi w h | (w, h) <- xs]
---     where bmi weight height = weight / height ^ 2
-
 calcBmis :: (RealFloat a) => [(a, a)] -> [a]
-calcBmis xs = [bmi | (w, h) <- xs, let bmi = w / h ^ 2]
+calcBmis xs = [bmi w h | (w, h) <- xs]
+    where bmi weight height = weight / height ^ 2
+
+calcBmis2 :: (RealFloat a) => [(a, a)] -> [a]
+calcBmis2 xs = [bmi | (w, h) <- xs, let bmi = w / h ^ 2]
 
 calcBmisF :: (RealFloat a) => [(a, a)] -> [a]
 calcBmisF xs = [bmi | (w, h) <- xs, let bmi = w / h ^ 2, bmi >= 25.0]
@@ -114,3 +114,9 @@ describeList :: [a] -> String
 describeList xs = "The list is " ++ case xs of [] -> "empty."
                                                [x] -> "a singleton list."
                                                xs -> "a longer list."
+                
+describeList2 :: [a] -> String
+describeList2 xs = "The list is " ++ what xs
+    where what [] = "empty."
+          what [x] = "a singleton list."
+          what xs = "a longer list."
