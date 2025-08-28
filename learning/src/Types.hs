@@ -157,3 +157,9 @@ zipLis :: [a] -> [b] -> [(a, b)]
 zipLis _ [] = []
 zipLis [] _ = []
 zipLis (x:xs) (y:ys) = (x, y) : zipLis xs ys
+
+elem' :: (Eq a) => a -> [a] -> Bool
+elem' a [] = False
+elem' a (x:xs)
+    | a == x    = True
+    | otherwise = a `elem'` xs
