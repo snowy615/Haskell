@@ -19,3 +19,8 @@ sayMe x = "Not between 1 and 5"
 factorial2 :: (Integral a) => a -> a
 factorial2 0 = 1
 factorial2 n = n * factorial2 (n - 1)
+
+charName :: Char -> String
+charName 'a' = "Albert"
+charName 'b' = "Broseph"
+charName 'c' = "Cecil"
