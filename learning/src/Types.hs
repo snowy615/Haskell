@@ -122,10 +122,10 @@ describeList2 xs = "The list is " ++ what xs
           what xs = "a longer list."
 
 
--- max3 :: (Ord a) => [a] -> a
--- max3 [] = error "empty list"
--- max3 [x] = x
--- max3 (x:xs) 
---     | x > maxTail = x
---     | otherwise = maxTail
---     where maxTail = max3 xs
+max3 :: (Ord a) => [a] -> a
+max3 [] = error "empty list"
+max3 [x] = x
+max3 (x:xs) 
+    | x > maxTail = x
+    | otherwise = maxTail
+    where maxTail = max3 xs
