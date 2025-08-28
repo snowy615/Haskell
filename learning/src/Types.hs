@@ -140,8 +140,8 @@ replicate2 n x
     | n <= 0    = []
     | otherwise = x : replicate2 (n - 1) x
 
--- take2 :: (Num i, Ord i) => i -> [a] -> [a]
--- take2 n _
---     | n <= 0  = []
--- take2 _ []     = []
--- take2 n (x:xs) = x : take2 (n - 1) xs
+taken :: (Num i, Ord i) => i -> [a] -> [a]
+taken n _
+    | n <= 0  = []
+taken _ []     = []
+taken n (x:xs) = x : taken (n - 1) xs
