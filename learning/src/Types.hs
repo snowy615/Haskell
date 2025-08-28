@@ -149,3 +149,6 @@ taken n (x:xs) = x : taken (n - 1) xs
 reverseLis :: [a] -> [a]
 reverseLis [] = []
 reverseLis (x:xs) = reverseLis xs ++ [x]
+
+repeatInf :: a -> [a]
+repeatInf x = x : repeatInf x
