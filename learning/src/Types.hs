@@ -129,3 +129,8 @@ max3 (x:xs)
     | x > maxTail = x
     | otherwise = maxTail
     where maxTail = max3 xs
+
+max4 :: (Ord a) => [a] -> a
+max4 [] = error "empty list"
+max4 [x] = x
+max4 (x:xs) = max' x (max4 xs)
