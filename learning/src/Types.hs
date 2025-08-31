@@ -213,3 +213,6 @@ numLongChains' = length (filter (\xs -> length xs > 15) (map chain [1..100]))
 
 sum2 :: (Num a) => [a] -> a
 sum2 xs = foldl (\acc x -> acc + x) 0 xs
+
+sum3 :: (Num a) => [a] -> a
+sum3 = foldl (+) 0
