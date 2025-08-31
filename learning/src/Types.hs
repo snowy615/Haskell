@@ -216,3 +216,11 @@ sum2 xs = foldl (\acc x -> acc + x) 0 xs
 
 sum3 :: (Num a) => [a] -> a
 sum3 = foldl (+) 0
+
+elem3 :: (Eq a) => a -> [a] -> Bool
+elem3 y ys = foldl (\acc x -> if x == y then True else acc) False ys
+
+map2 :: (a -> b) -> [a] -> [b]
+map2 f xs = foldr (\x acc -> f x : acc) [] xs
+--right fold is better for constructing lists than left fold 
+--(\acc x -> acc ++ [f x]) [] xs
