@@ -224,3 +224,9 @@ map2 :: (a -> b) -> [a] -> [b]
 map2 f xs = foldr (\x acc -> f x : acc) [] xs
 --right fold is better for constructing lists than left fold 
 --(\acc x -> acc ++ [f x]) [] xs
+
+($) :: (a -> b) -> a -> b
+f $ x = f x
+
+(.) :: (b -> c) -> (a -> b) -> a -> c
+f . g = \x -> f (g x)
