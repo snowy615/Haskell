@@ -30,6 +30,7 @@ library
       Multiply
       Test
       Types
+      Types2
   other-modules:
       Paths_learning
   autogen-modules:
