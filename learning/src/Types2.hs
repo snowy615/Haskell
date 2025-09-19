@@ -6,6 +6,7 @@ import Data.List
 import qualified Data.Map as Map
 import Data.Char
 -- import Data.Set as Set
+import Geometry
 
 numUniques :: (Eq a) => [a] -> Int
 numUniques = length . nub
