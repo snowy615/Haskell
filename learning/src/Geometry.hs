@@ -1,10 +1,11 @@
-module Geometry where
-( sphereVolume, 
-  sphereArea,
-  cubeVolume,
-  cubeArea
-) where
+module Geometry
+  ( sphereVolume
+  , sphereArea
+  , cubeVolume
+  , cubeArea
+  ) where
 
+  
 sphereVolume :: Float -> Float
 sphereVolume r = (4.0 / 3.0) * pi * r ^ 3
 
