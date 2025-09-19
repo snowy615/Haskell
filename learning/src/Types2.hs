@@ -5,6 +5,7 @@ import Data.List
 -- import Data.List hiding (nub)     =import everything except nub
 import qualified Data.Map as Map
 import Data.Char
+-- import Data.Set as Set
 
 numUniques :: (Eq a) => [a] -> Int
 numUniques = length . nub
