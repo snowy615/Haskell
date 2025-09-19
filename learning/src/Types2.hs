@@ -4,6 +4,7 @@ import Data.List
 -- import Data.List(nub, sort)       =import only nub and sort
 -- import Data.List hiding (nub)     =import everything except nub
 import qualified Data.Map as Map
+import Data.Char
 
 numUniques :: (Eq a) => [a] -> Int
 numUniques = length . nub
@@ -12,3 +13,9 @@ search :: (Eq a) => [a] -> [a] -> Bool
 search needle haystack = 
     let nlen = length needle
     in foldl (\acc x -> if take nlen x == needle then True else acc) False (tails haystack)
+
+encode2 :: Int -> String -> String
+encode2 shift msg = 
+    let ords = map ord msg
+        shifted = map (+ shift) ords
+    in map chr shifted
