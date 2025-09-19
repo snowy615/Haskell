@@ -19,3 +19,6 @@ encode2 shift msg =
     let ords = map ord msg
         shifted = map (+ shift) ords
     in map chr shifted
+
+decode2 :: Int -> String -> String
+decode2 shift msg = encode2 (negate shift) msg
