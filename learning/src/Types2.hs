@@ -37,3 +37,8 @@ data Person = Person { firstName :: String
                      , flavor :: String
                      } deriving (Show)
 data Either a b = Left a | Right b deriving (Eq, Ord, Read, Show)
+
+infixr 5 .++
+(.++) :: [a] -> [a] -> [a]
+[] .++ ys = ys
+(x:xs) .++ ys = x : (xs .++ ys)
