@@ -28,3 +28,11 @@ decode2 shift msg = encode2 (negate shift) msg
 findKey :: (Eq k) => k -> [(k, v)] -> Maybe v
 findKey key = foldr (\(k,v) acc -> if key == k then Just v else acc) Nothing
 
+-- record syntax
+data Person = Person { firstName :: String
+                     , lastName :: String
+                     , age :: Int
+                     , height :: Float
+                     , phoneNumber :: String
+                     , flavor :: String
+                     } deriving (Show)
