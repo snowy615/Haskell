@@ -36,3 +36,4 @@ data Person = Person { firstName :: String
                      , phoneNumber :: String
                      , flavor :: String
                      } deriving (Show)
+data Either a b = Left a | Right b deriving (Eq, Ord, Read, Show)
