@@ -3,6 +3,7 @@ module Geometry
   , sphereArea
   , cubeVolume
   , cubeArea
+  , Shape(..)
   ) where
 
   
@@ -17,3 +18,6 @@ cubeVolume a = a ^ 3
 
 cubeArea :: Float -> Float
 cubeArea a = 6 * a ^ 2
+
+data Shape = Circle Float Float Float | Rectangle Float Float Float Float
+    deriving (Show)

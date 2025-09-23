@@ -6,7 +6,7 @@ import Data.List
 import qualified Data.Map as Map
 import Data.Char
 -- import Data.Set as Set
-import Geometry
+-- import Geometry
 
 numUniques :: (Eq a) => [a] -> Int
 numUniques = length . nub
@@ -27,3 +27,4 @@ decode2 shift msg = encode2 (negate shift) msg
 
 findKey :: (Eq k) => k -> [(k, v)] -> Maybe v
 findKey key = foldr (\(k,v) acc -> if key == k then Just v else acc) Nothing
+
