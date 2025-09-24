@@ -27,6 +27,7 @@ library
   exposed-modules:
       Geometry
       HelloWorld
+      InOut
       Lib
       Multiply
       Test
