@@ -14,3 +14,10 @@ main = do
     putStr contents
     hClose handle
 
+    -- alternative
+    withFile "input.txt" ReadMode (\handle -> do
+        contents <- hGetContents handle
+        putStr contents)
+
+    -- easier
+
