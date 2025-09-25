@@ -20,4 +20,6 @@ main = do
         putStr contents)
 
     -- easier
+    contents <- readFile "input.txt"
+    putStr contents
 
