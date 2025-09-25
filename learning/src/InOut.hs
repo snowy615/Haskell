@@ -22,4 +22,5 @@ main = do
     -- easier
     contents <- readFile "input.txt"
     putStr contents
+--writeFile, appendFile
 

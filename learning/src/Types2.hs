@@ -42,3 +42,11 @@ infixr 5 .++
 (.++) :: [a] -> [a] -> [a]
 [] .++ ys = ys
 (x:xs) .++ ys = x : (xs .++ ys)
+
+solveRPN :: (Num a) => String -> a
+solveRPN = head . foldl foldingFunction [] . words
+    where foldingFunction (x:y:ys) "*" = (x * y):ys
+          foldingFunction (x:y:ys) "+" = (x + y):ys
+          foldingFunction (x:y:ys) "-" = (y - x):ys
+          foldingFunction (x:y:ys) "/" = (y `div` x):ys
+          foldingFunction xs numberString = read numberString : xs
